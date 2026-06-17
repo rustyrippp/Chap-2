@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html>
+    
+   <head>
+       <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ectasy</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        
+          body {
+            font-family: "Exo 2", sans-serif;
+            background-color: #F3F4F6;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            color: #1e2937;
+            min-height: 100dvh;
+        }
+        
+        /* Navbar */
+        nav {
+            background-color: #1F2937;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        
+        .logo {
+            font-family: "Bungee", sans-serif;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+        
+        .menu li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.9s;
+        }
+        
+       
+        
+        /* Tombol */
+        .btn {
+            padding: 6px 22px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        
+        .btn-primary {
+            background-color: #0F172A;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #6B7280;
+            transform: translateY(-3px);
+        }
+        
+        
+.btn-outline {
+    background: transparent;
+    color: white;
+    border-radius: 10px;
+    transition-delay: 1s ease-out;
+    transition: 1s ease-out;
+  
+}
+
+/* Saat ditekan / diklik */
+.btn-outline:active,
+.btn-outline.pressed {
+    background: white;
+            color: #1F2937;
+            transform: translateY(-3px);
+            box-shadow: 0 0 12px white, 
+                        0 0 24px white;
+            transition:  0.4s ease-out;
+            transition-delay: 0;
+}
+
+
+
+@keyframes btn-outline {
+    0% {
+        background: transparent;
+        color: white;
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    20%, 100% {
+        background: white;
+        color: #1F2937;
+        transform: translateY(-3px);
+        box-shadow:
+            0 0 12px white,
+            0 0 24px white;
+    }
+}
+        
+        
+        /* Header */
+        header {
+            background: linear-gradient(140deg, #1F2937, #6B7280);
+            color: white;
+            text-align: center;
+            padding: 5px 20px 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh-70px);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: "Bungee", sans-serif;
+            padding: 0;
+            font-size: clamp(28px,4vw, 55px);
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        
+        .judul {
+            font-family: "DM Serif Display", serif;
+            padding: 60px 0 35px;
+            text-align: center;
+            font-size: clamp(20px,4vw, 45px);
+            font-weight: 700;
+        }
+            
+            .subtitle {
+            font-family: 'Times New Roman', sans-serif;
+            font-size: 22px;
+            margin: 15px 0 25px;
+            opacity: 0.95;
+        }
+        
+        .header-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .container {
+            max-width: 1400px;       
+            margin: 0 auto;
+            padding: 40px 20px 10px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: justify;
+        }
+        
+        .chapter {
+            max-width: 1400px;       
+            margin: 0 auto;
+            padding: 40px 20px 10px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: justify;
+            justify-content: center;
+        }
+        
+        
+                .about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 80px;
+}
+
+.about img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+
+.about-text {
+    width: 100%;
+}
+
+/* Responsive About */
+@media (min-width: 640px) {
+    .about {
+        flex-direction: row;
+        gap: 60px;
+        align-items: center;
+    }
+    
+    .link {
+        font-size: 40.5px;
+    }
+    
+    .about img {
+        order: 2;
+        width: 320px;
+        max-width: none;
+        flex-shrink: 0;           /* Penting agar tidak mengecil */      cursor: pointer;
+    }
+    
+    .about-text {
+        order: 1;
+        text-align: justify;
+        flex: 1;
+    }
+}
+        
+        .about img:active,
+        .about img.zoomed {
+        transform: scale(1.12) !important;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+        
+}
+.chapter-img img:active,
+        .chapter-img img.zoomed {
+        transform: scale(1.12) !important;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+        
+}
+        
+        .about-text {
+            flex: 1;
+            min-width: 320px;
+        }
+        
+        p {
+            font-size: 17.5px;
+            margin-bottom: 18px;
+            text-indent: 1.7em;            
+        }
+        
+        @media (min-width: 1023px) {
+            
+            .btn {
+                padding: 6.5px 32.5px;
+            }
+            
+            p {
+                font-size: 27.5px
+            }
+            
+            .logo {
+                font-size: 34.5px;
+            }
+            
+            .nav-container{
+                padding: 10.5px 40.5px;
+            }
+            
+            .btn-outline {
+                border-radius: 20.5px;
+            }
+            
+            .menu {
+                font-size: 26px;
+            }
+            
+            .menu-b {
+                font-size: 26px;
+            }
+        }
+        
+        .section {
+            margin-bottom: 70px;
+        }
+        
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .skill-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #1e40af);
+            border-radius: 10px;
+        }
+        
+        footer {
+            background-color: #1F2937;
+            color: white;
+            text-align: center;
+            padding: 30px 20px 15px;
+            margin-top: 80px;
+            z-index: 1000;
+            position:  relative;
+        }
+        
+        .social-links {
+            margin: 25px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 15px;
+            font-size: 26px;
+            transition: transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: scale(1.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 601px) {
+            .menu {
+                display: none;
+            }
+        }
+        
+        .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    padding-right: 10px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.5s;
+}
+
+    .hamburger {
+        display: flex;
+    }
+    
+.menu-b {
+    display: none;
+    list-style: none;
+    gap: 42px;
+}
+
+
+    
+    .menu-b {    
+    position: fixed;
+        display: flex;
+        padding: 10px;
+        top: 45px;
+        left: -100%;
+        width: 40%;
+        height: calc(100vh - 55px);
+        background-color: #1F2937;
+        color: #1F2937;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3rem;
+        gap: 1.5rem;
+        transition: left 0.5s cubic-bezier(0.32, 0.72, 0, 1),
+                    opacity 0.9s ease,
+                    visibility 0.5s ease; 
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1000;
+
+}
+
+        @media (min-width: 600px) {
+            .menu-b {    
+        width:20%;
+        }
+        }
+    .menu-b.active {
+        display: flex;
+        left: 0;
+        visibility: visible;
+        opacity: 1;
+        color: #1F2937;
+    }
+   
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+<!--  -->}
+
+.hamburger.active span:nth-child(2) {
+    transform: scale(00);
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        * {
+    -webkit-tap-highlight-color: transparent;
+     }
+         header h1 {
+             margin-bottom: 5px;
+              font-size: clamp(40px, 8vw, 62px);
+             }
+             
+            .link {
+            display: inline-flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            color: #111827;
+            font-size: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 5px 7px;
+        }
+
+        .underscore {
+            position: absolute;
+            bottom: 8px;
+            width: 0%;
+            height: 5px;
+            background: linear-gradient(90deg, rgba(31,41,55,1) 0%, rgba(55,65,81,1) 52%, rgba(107,114,158,1) 100%);
+            border-radius: 5px;
+            transition: all 0.5s;
+        }
+
+        
+        
+      .opsi{
+  display:flex;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  width:100%;
+  min-height:100vh;
+}
+
+.sheet{
+  min-width:100%;
+  min-height:100dvh;
+  height:auto;
+  padding:80px 30px;
+  box-sizing:border-box;
+  scroll-snap-align:start;
+}
+
+.opsi::-webkit-scrollbar{
+  display:none;
+}
+
+        .card{
+  width:calc(50% - 20px);
+  box-sizing:border-box;
+  position:relative;
+  z-index:2;
+}  
+    
+.product{
+  display:flex;
+  flex-wrap:wrap;
+  gap:40px;
+  justify-content:center;
+}
+.card img{
+  width:100%;
+  display:block;
+  border-radius:10px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.6);
+  aspect-ratio:3/4;
+  object-fit:cover;
+  transition: 0.4s ease;
+  z-index:1;
+}
+
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    inset:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backdrop-filter: blur(2.3px);
+    background: rgba(0,0,0,0.25);
+    opacity: 0;
+    z-index: 3;
+    transform: scale(1);
+    transition:
+              opacity 0.4s ease, 
+              transform 0.4s ease;
+}
+.overlay h3{
+    color:white;
+    font-size:22px;
+    transform: translateY(40px);
+    transition: 0.4s ease;
+    font-family: "PT Serif", serif;
+    text-align: center;
+}
+
+
+.link.active .underscore{
+  width:100%;
+}  
+@media (min-width:767px){
+
+  .card{
+    width:220px;
+  }
+}
+
+.card active img,
+        .card.zoomed img{
+        transform: scale(1.12) !important;
+        }
+        .card.zoomed .overlay{
+            opacity:1;
+            transform: scale(1.12);
+           }
+        
+
+    .chapter-img img {
+    width: 100%;
+    max-width: 680px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    cursor: pointer;
+    transition: 0.4s ease;
+    justify-content: center;
+}
+        /* Closing Style */
+.closing {
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 35px 0;
+}
+
+/* Closing yang di tengah + italic */
+.closing.center {
+    text-align: center;
+    font-style: italic;
+    margin: 45px 0 20px 0;
+    font-size: 17.5px;
+}
+
+    .chapter-img {
+    width: 100%;
+    text-align: center;           /* Penting */
+    margin: 25px 0;
+}
+
+        @media (max-width: 768px) {
+    .chapter-img img {
+        max-width: 95%;         /* Hampir full width di HP */
+        border-radius: 14px;
+        margin: 20px auto;
+    }
+}
+/* === SCROLL OFFSET UNTUK ANCHOR LINK === */
+#about,
+#member,
+#journey,
+#story,
+.section[id],
+.about[id],
+.chapter[id] {
+    scroll-margin-top: 120px;   
+    scroll-padding-top: 90px;
+}
+    
+    </style>
+   </head>
+  <body>
+      <nav>
+          <div class="nav-container">
+              <div href="" class="logo">ectasy</div>
+           
+              <ul class="menu">
+              <li><a href="#about" class="btn btn-outline">about</a></li>
+              <li><a href="#member" class="btn btn-outline">member</a></li>
+              <li><a href="#journey" class="btn btn-outline">journey</a></li>
+              <li><a href="#story" class="btn btn-outline">story</a></li>
+              <li><a href="j.html" class="btn btn-outline">gallery</a></li>
+          </ul>
+          
+          <ul class="menu-b">
+            <li><a href="#about" class="btn btn-outline">about</a></li>
+            <li><a href="#member" class="btn btn-outline">member</a></li>
+            <li><a href="#journey" class="btn btn-outline">journey</a></li>
+            <li><a href="#story" class="btn btn-outline">story</a></li>
+            <li><a href="j.html" class="btn btn-outline">gallery</a></li>
+            
+        </ul>
+          
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+             
+          </div>
+      </nav>
+      
+      
+      <header data-aos="fade-down">
+        <h1>Ecstasy</h1>
+      <p style="font-family: 'Times New Roman', sans-serif; font-size: 20px; margin: 5px; text-indent: 0;">
+              A room full of a dreamers
+</p>
+    </header>
+        <section id="about">
+            <div class="container">
+                <div class="about section" data-aos="fade-up">
+                    <img src="logo.jpg" alt="ectasy">
+                    <div class="about-text">
+                        <h2>about</h2>
+                    <p>The Ectasy Class is one of the science classes at MTSN Surakarta 1, class of 2026. Led by Mrs. Nirmala as homeroom teacher, Ectasy consists of enthusiastic, creative, and solid students. The name "Ectasy" was chosen with the hope that every class member will always feel happiness, enthusiasm, and togetherness while studying at this madrasah. This class exists as a forum that supports the holistic growth and development of students, including intellectual, emotional, and spiritual aspects.</p>
+                  
+                   
+                    
+                    <a href="https://www.tiktok.com/@tenacious_folivora?_r=1&_t=ZS-95CLMvtHPrI" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/zycu_e?igsh=enEzankweGcyYXFz" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    
+                    <a href="https://open.spotify.com/playlist/0GnPIkXY1Jgan5Sda5Abo4?si=nWDZKZmEQTqwtcxx9ZR8mQ&pi=wl4pRKjsRSunI" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-spotify"></i></a>
+                    </div>
+                </div>
+                <div data-aos="fade-up">
+                <div class="about section" style="align-items: center; justify-content: center;">
+                    <img src="nir.jpg" alt="nirmala">
+                </div>
+                <div class="section">
+                    <p>Under Mrs. Nirmala's patient and dedicated guidance, the Ectasy Class is committed to being a class that excels, is disciplined, and has noble character. For three years, we have actively developed our potential through academic and non-academic activities, supporting one another, and maintaining a strong sense of togetherness. May the Ectasy Class create beautiful memories, achieve various proud achievements, and become a class that will be remembered forever at MTSN Surakarta 1.</p>
+                </div>
+            </div>
+            </div>
+            </section>
+            <div id="member">
+                <h2 style="text-align: center;">member</h2>
+                <ul style="display: flex; list-style: none;gap: 10px; align-items: center; justify-content: center; margin: 0; padding: 0;">
+          <li><a href="#female" class="link">female<div class="underscore"></div></a></li>
+          <li><a href="#male" class="link">male<div class="underscore"></div></a></li>
+
+            </ul>
+            <div class="opsi">
+                <section id="female" class="sheet">
+                    <div class="product">
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="25.jpg" alt="">
+                            <div class="overlay"><h3>
+                                My Chagiya Gua
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="1.jpg" alt="">
+                            <div class="overlay"><h3>
+                                Akila Putri Cakra Jaya
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="2.jpg" alt="">
+                            <div class="overlay"><h3>
+                                Aqiila Utqi Khairany
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="3.jpg" alt="">
+                            <div class="overlay"><h3>
+                                Audrey Nydia Mahardika
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="4.jpg" alt="">
+                            <div class="overlay"><h3>
+                                Azizah Faiha Firdaus
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="kafaa.jpg" alt="">
+                            <div class="overlay"><h3>
+                                Kafaa Billahi Wakiilaa
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="7.jpg" alt="">
+                            <div class="overlay"><h3>
+                              Kirana Kusuma Ningtyas  
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="9.jpg" alt="">
+                            <div class="overlay"><h3>
+                              Lubnaa Alifiatama Nurdin  
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="10.jpg" alt="">
+                            <div class="overlay"><h3>
+                               Malika Ardhya Garini Susilo 
+                            </h3></div>
+                         </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="15.jpg" alt="">
+                            <div class="overlay"><h3>
+                                Nabila Fairus Agsan Syafirin
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="16.jpg" alt="">
+                            <div class="overlay"><h3>
+                                Naila Jasmine Ailsa Akila
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="17.jpg" alt="">
+                            <div class="overlay"><h3>
+                                Najma Labibah Zahid Ahnafkhanisa
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="18.jpg" alt="">
+                            <div class="overlay"><h3>
+                              Nanda Vanessa Azaria  
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="19.jpg" alt="">
+                            <div class="overlay"><h3>
+                               Nasywa Althafunnisa Bilqis Iswara 
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="20.jpg" alt="">
+                            <div class="overlay"><h3>
+                                Orinda Kayana Damayanti
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="21.jpg" alt="">
+                            <div class="overlay"><h3>
+                               Qudwah Al Fathinah Rinadi 
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="26.jpg" alt="">
+                            <div class="overlay"><h3>
+                                Shafira Febriana Nafi'ah
+                            </h3></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="sheet" id="male">
+                    <div class="product">
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="5.jpg" alt="">
+                            <div class="overlay"><h3>
+                               Fazza Adlie Setyawan 
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="8.jpg" alt="">
+                            <div class="overlay"><h3>
+                               Lingga Abyasa Magani 
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="11.jpg" alt="">
+                            <div class="overlay"><h3>
+                              Muhammad Arroyan Mulyanto  
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="12.jpg" alt="">
+                            <div class="overlay"><h3>
+                                Muhammad Azzam Rafa Widjanarko
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="13.jpg" alt="">
+                            <div class="overlay"><h3>
+                                Muhammad Hariz Fayzul Haq
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="14.jpg" alt="">
+                            <div class="overlay"><h3>
+                                Muhammad Kenan Athaya Celio
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="22.jpg" alt="">
+                            <div class="overlay"><h3>
+                               Raditya Dzaki Javas Nararya 
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="23.jpg" alt="">
+                            <div class="overlay"><h3>
+                                Rafif Aidan Saputra
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="24.jpg" alt="">
+                            <div class="overlay"><h3>
+                                Richy Maulana Mochtar
+                            </h3></div>
+                        </div>
+                        <div class="card" data-aos="zoom-in-up">
+                            <img src="27.jpg" alt="">
+                            <div class="overlay"><h3>
+                                Tegar Muhammad Yasin
+                            </h3></div>
+                        </div>
+                    </div>
+                    </div>
+                    </section>
+            </div>
+                <div class="container">
+                    <section id="journey" data-aos="fade-right"><h2>journey</h2><p>Our Journey
+From First Steps to Lasting Memories
+Our story began in 2023, when a group of new students stepped into MTSN Surakarta 1 carrying big dreams mixed with nervous excitement. Coming from various elementary schools and different backgrounds, we were suddenly placed together in one science class. Little did we know, this would become one of the most meaningful chapters of our lives — the beginning of Ectasy Class.
+</p>
+
+<div class="judul" data-aos="fade-left"> Chapter 1 - The Beginning (2023/2024)</div>
+<div class="chapter-img" data-aos="fade-up"><img src="k7.jpg" alt=""></div>
+
+<p>In our first year, everything felt new and overwhelming. We spent many days simply trying to remember each other’s names, adapting to the madrasah environment, and adjusting to new rules and schedules. There were plenty of awkward silences, funny moments of shyness, and the gradual process of opening up to one another. We participated in our first class activities, group assignments, and ice-breaking sessions. Slowly but surely, small friendships began to form. This was the foundation year — a time of discovery, where we learned not only about academic subjects but also about tolerance, patience, and the importance of building relationships. Under the guidance of Mrs. Nirmala, we started to understand what it means to be part of a class that genuinely cares for its members.</p>
+                   <div class="judul" data-aos="fade-right">
+Chapter 2 – Growing Together (2024/2025)
+</div>
+<div class="chapter-img" data-aos="fade-up"><img src="k8.jpg" alt=""></div>
+<p>
+The second year marked a significant shift. We were no longer complete strangers. Academic demands became heavier, and we faced our first real challenges — group projects with tight deadlines, extracurricular competitions, and balancing studies with personal responsibilities. This was the year we truly learned the meaning of teamwork. We supported friends who were struggling, celebrated each other’s achievements, and stood together during difficult times. Our class spirit grew stronger as we organized various activities, from study groups to casual gatherings. The name “Ectasy” started to feel more alive, reflecting the happiness and enthusiasm we shared. It was during this period that we developed a deeper sense of belonging and began to create memories that we still talk about today.
+</p>
+<div class="judul" data-aos="fade-left">
+Chapter 3 – Reaching New Heights (2025/2026)
+</div>
+<div class="chapter-img" data-aos="fade-up"><img src="k9.jpg" alt=""></div>
+<p style="padding-bottom: 35px;">
+Now, in our final year, we have grown into a more mature and confident group. This chapter feels like the peak of our journey. We are more focused, determined, and aware of the limited time we have left together. We are working hard to achieve our best academically while also preparing to leave a meaningful legacy at MTSN Surakarta 1. From leading school events to maintaining strong bonds among ourselves, we strive to become a class remembered not only for achievements but also for our warmth and unity. This year is filled with a mixture of excitement for the future and a bittersweet feeling as we approach graduation. We are cherishing every moment, knowing that these final months will become some of our most treasured memories.</p>
+<p>Through every chapter — the laughter, the challenges, the late-night study sessions, and the unforgettable experiences — one thing has remained constant: we never walk alone. Ectasy Class is more than just a group of students. It is a story of growth, friendship, resilience, and beautiful moments we continue to create together.</p>
+                
+</section>
+                </div>
+            
+            <div class="container">
+                <section id="story" data-aos="fade-right">
+                    <h2>story</h2>
+                    <div class="chapter-img" data-aos="fade-up"><img src="story.jpg" alt=""></div>
+                    <p>Our story began in the year 2023, when dozens of new students walked through the gates of MTSN Surakarta 1 for the first time — hearts full of hope, minds filled with dreams, and a hint of nervousness. Coming from different elementary schools and various backgrounds, we were brought together in one science class that would later be named Ectasy.
+</p>
+                    <p>
+The name "Ectasy" was not chosen by chance. It carries a deep hope that every member of this class would experience true happiness (ecstasy), burning enthusiasm, and a strong sense of togetherness throughout our time in this madrasah. We wanted Ectasy to be more than just a class — we wanted it to become a second home where we could grow, laugh, struggle, and support one another.
+</p>
+                    <p>
+Under the caring guidance of Mrs. Nirmala, we slowly began writing the first pages of our story. From the initial awkwardness and shyness, friendships gradually blossomed. From difficult group assignments, teamwork was born. From small failures, we learned to rise together. Every moment — the joyful ones and the challenging ones — became an important part of our shared journey.
+</p>
+                    <p>
+Now, in 2026, as we enter our final year, Ectasy is no longer just a name. It has become our identity, our family, and a beautiful collection of memories that we will carry for the rest of our lives.
+This is not the end of our story. It is only the middle chapter — and we are determined to make the remaining pages as meaningful as possible.</p>
+
+<div class="closing"><p>
+        As we approach the end of our journey at MTSN Surakarta 1, we look back with deep gratitude. Ectasy Class has taught us the true meaning of friendship, resilience, and togetherness.
+    </p></div>
+    
+   <div class="closing" style="text-align: center; font-style: italic; margin: 40px 0 20px 0;"><p style=" text-indent: 0;">
+        This is not goodbye.<br>
+        It is “see you in our next great chapter.”
+    </p>
+                </section>
+            </div>
+            <footer>
+    <div class="footer-container">
+        <p>&copy; 2026 Ectasy Class - MTSN Surakarta 1</p>
+        <p>Class of 2026 | Science Class</p>
+        
+        <p class="footer-quote">
+            "Together We Shine • Semangat Ectasy Selalu"
+        </p>
+    </div>
+</footer>
+            
+             <script>
+const hamburger = document.getElementById('hamburger');
+const menu = document.querySelector('.menu-b');
+
+let isScrollingFromLink = false;   // Flag untuk mencegah close saat klik link
+
+function closeMenu() {
+    hamburger.classList.remove('active');
+    menu.classList.remove('active');
+}
+
+// Toggle menu
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    menu.classList.toggle('active');
+});
+
+// Auto close saat scroll (tapi tidak jika dari klik link)
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+    if (menu.classList.contains('active') && !isScrollingFromLink) {
+        const currentScroll = window.scrollY;
+        
+        if (Math.abs(currentScroll - lastScroll) > 20) {
+            closeMenu();
+        }
+        lastScroll = currentScroll;
+    }
+});
+
+document.querySelectorAll('.menu-b a').forEach(link => {
+    link.addEventListener('click', () => {
+        isScrollingFromLink = true;
+        
+        setTimeout(() => {
+            closeMenu();
+            isScrollingFromLink = false;
+        }, 200);
+    });
+});
+
+
+</script>
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const zoomableImages = document.querySelectorAll('.about img, .chapter-img img');
+
+    zoomableImages.forEach(img => {
+        img.addEventListener('click', function(e) {
+            e.stopPropagation(); 
+            
+            if (this.classList.contains('zoomed')) {
+                this.classList.remove('zoomed');
+            } else {
+                // Matikan semua zoom lain
+                zoomableImages.forEach(i => i.classList.remove('zoomed'));
+                this.classList.add('zoomed');
+            }
+        });
+    });
+
+    // Klik di luar gambar → reset semua
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.chapter-img img, .about img')) {
+            zoomableImages.forEach(img => {
+                img.classList.remove('zoomed');
+            });
+        }
+    });
+});
+</script>
+
+   <script>
+const opsi = document.querySelector(".opsi");
+const sections = document.querySelectorAll(".sheet");
+const navLinks = document.querySelectorAll("#member .link");
+
+function updateActiveLink() {
+
+  let currentSection = sections[0];
+
+  sections.forEach(section => {
+
+    const rect = section.getBoundingClientRect();
+
+    if (Math.abs(rect.left) < Math.abs(currentSection.getBoundingClientRect().left)) {
+      currentSection = section;
+    }
+
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+
+    if(link.getAttribute("href") === "#" + currentSection.id){
+      link.classList.add("active");
+    }
+  });
+
+}
+
+opsi.addEventListener("scroll", updateActiveLink);
+
+updateActiveLink();
+</script>
+<script>
+// Zoom Card - Sama seperti logo & nir.jpg
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+    card.addEventListener('click', function(e) {
+        e.stopImmediatePropagation();
+
+        if (this.classList.contains('zoomed')) {
+            this.classList.remove('zoomed');
+        } else {
+            // Tutup semua card lain
+            cards.forEach(c => c.classList.remove('zoomed'));
+            this.classList.add('zoomed');
+        }
+    });
+});
+
+// Klik di luar = semua mengecil
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.card')) {
+        cards.forEach(card => card.classList.remove('zoomed'));
+    }
+});
+</script>
+<script>
+// Tombol Navbar Smooth
+document.querySelectorAll('.btn-outline').forEach(btn => {
+
+    btn.addEventListener('click', function() {
+
+        document.querySelectorAll('.btn-outline').forEach(b => {
+            b.classList.remove('pressed');
+        });
+
+        this.classList.add('pressed');
+
+        setTimeout(() => {
+            this.classList.remove('pressed');
+        }, 1000);
+
+    });
+
+});
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+      once:true, 
+      duration:1000, 
+  });
+  
+</script>
+  </body>
+</html>

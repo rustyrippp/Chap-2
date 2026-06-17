@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Ectasy</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+    <style>
+        
+          body {
+            font-family: "Exo 2", sans-serif;
+            background-color: #F3F4F6;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            color: #1e2937;
+            min-height: 100dvh;
+        }
+        
+        /* Navbar */
+        nav {
+            background-color: #1F2937;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        
+        .logo {
+            font-family: "Bungee", sans-serif;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+        
+        .menu li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+     
+        
+        /* Tombol */
+        .btn {
+            padding: 6px 22px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        @media (min-width: 1023px) {
+            
+            .btn {
+                padding: 6.5px 32.5px;
+            }
+            
+            p {
+                font-size: 27.5px
+            }
+            
+            .logo {
+                font-size: 34.5px;
+            }
+            
+            .nav-container{
+                padding: 10.5px 40.5px;
+            }
+            
+            .btn-outline {
+                border-radius: 20.5px;
+            }
+            
+            .menu {
+                font-size: 26px;
+            }
+            
+            .menu-b {
+                font-size: 26px;
+            }
+        }
+        
+        
+        .btn-primary {
+            background-color: #0F172A;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #6B7280;
+            transform: translateY(-3px);
+        }
+        
+        .btn-outline {
+    background: transparent;
+    color: white;
+    border-radius: 10px;
+    transition-delay: 1s ease-out;
+    transition: 1s ease-out;
+  
+}
+
+/* Saat ditekan / diklik */
+.btn-outline:active,
+.btn-outline.pressed {
+    background: white;
+            color: #1F2937;
+            transform: translateY(-3px);
+            box-shadow: 0 0 12px white, 
+                        0 0 24px white;
+            transition:  0.4s ease-out;
+            transition-delay: 0;
+}
+
+
+
+@keyframes btn-outline {
+    0% {
+        background: transparent;
+        color: white;
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    20%, 100% {
+        background: white;
+        color: #1F2937;
+        transform: translateY(-3px);
+        box-shadow:
+            0 0 12px white,
+            0 0 24px white;
+    }
+}
+         @media (max-width: 601px) {
+            .menu {
+                display: none;
+            }
+        }
+        
+        .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    padding-right: 10px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.5s;
+}
+
+    .hamburger {
+        display: flex;
+    }
+    
+.menu-b {
+    display: none;
+    list-style: none;
+    gap: 42px;
+}
+
+
+    
+    .menu-b {    
+    position: fixed;
+        display: flex;
+        padding: 10px;
+        top: 45px;
+        left: -100%;
+        width: 40%;
+        height: calc(100vh - 55px);
+        background-color: #1F2937;
+        color: #1F2937;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3rem;
+        gap: 1.5rem;
+        transition: left 0.5s cubic-bezier(0.32, 0.72, 0, 1),
+                    opacity 0.9s ease,
+                    visibility 0.5s ease; 
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1000;
+
+}
+
+        @media (min-width: 600px) {
+            .menu-b {    
+        width:20%;
+        }
+        }
+    .menu-b.active {
+        display: flex;
+        left: 0;
+        visibility: visible;
+        opacity: 1;
+        color: #1F2937;
+    }
+   
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+<!--  -->}
+
+.hamburger.active span:nth-child(2) {
+    transform: scale(00);
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        * {
+    -webkit-tap-highlight-color: transparent;
+     }
+     
+     .container {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 20px 15px;
+    column-count: 3;           /* 3 kolom di layar besar */
+    column-gap: 25px;
+    width: calc(100-12px);
+}
+
+body.lightbox-active {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+/* LIGHTBOX - Improved */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 95vh;
+    border-radius: 12px;
+    box-shadow: 0 7px 60px rgba(255, 255, 255, 0.8); 
+    object-fit: contain;
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Smooth transition */
+}
+
+.close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10001;
+    padding: 10px 20px;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255,255,255,0.7);
+    font-size: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 60px 25px;        /* Hitbox lebih besar */
+    user-select: none;
+    z-index: 10001;
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+.prev:hover, .next:hover {
+    color: white;
+    background: rgba(255,255,255,0.1);
+}
+.card {
+    background: linear-gradient(180deg, #1F2937, #41444e);
+    padding: 12px;
+    border-radius: 20px;
+    margin-bottom: 25px;       /* Jarak antar foto */
+    break-inside: avoid-column; /* Penting! Biar card tidak terpotong */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    display: block;
+    height: auto;              /* Biar tinggi asli gambar tetap berbeda */
+}
+        @media (max-width: 1100px) {
+    .container { column-count: 2; }
+}
+
+@media (max-width: 650px) {
+    .container { 
+        column-count: 1; 
+        padding: 15px 10px;
+    }
+}
+        
+        
+    </style>
+    
+    </head>
+    
+    <body>
+        <nav>
+          <div class="nav-container">
+              <div href="" class="logo">ectasy</div>
+           
+              <ul class="menu">
+              <li><a href="index.html#about" class="btn btn-outline">about</a></li>
+              <li><a href="index.html#member" class="btn btn-outline">member</a></li>
+              <li><a href="index.html#journey" class="btn btn-outline">journey</a></li>
+              <li><a href="index.html#story" class="btn btn-outline">story</a></li>
+              <li><a href="#gallery" class="btn btn-outline">gallery</a></li>
+          </ul>
+          
+          <ul class="menu-b">
+            <li><a href="index.html#about" class="btn btn-outline">about</a></li>
+            <li><a href="index.html#member" class="btn btn-outline">member</a></li>
+            <li><a href="index.html#journey" class="btn btn-outline">journey</a></li>
+            <li><a href="index.html#story" class="btn btn-outline">story</a></li>
+            <li><a href="#gallery" class="btn btn-outline">gallery</a></li>
+            
+        </ul>
+          
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+      </nav>
+      <div class="container">
+          <div class="card"><img src="k7.jpg" alt=""></div>
+          <div class="card"><img src="f2.jpg" alt=""></div>
+          <div class="card"><img src="k9.jpg" alt=""></div>
+          <div class="card"><img src="f3.jpg" alt=""></div>
+          <div class="card"><img src="f4.jpg" alt=""></div>
+          <div class="card"><img src="f5.jpg" alt=""></div>
+          <div class="card"><img src="f6.jpg" alt=""></div>
+          <div class="card"><img src="f7.jpg" alt=""></div>
+          <div class="card"><img src="f8.jpg" alt=""></div>
+          <div class="card"><img src="f9.jpg" alt=""></div>
+          <div class="card"><img src="f10.jpg" alt=""></div>
+          <div class="card"><img src="f11.jpg" alt=""></div>
+          <div class="card"><img src="f12.jpg" alt=""></div>
+          <div class="card"><img src="f13.jpg" alt=""></div>
+          <div class="card"><img src="f14.jpg" alt=""></div>
+          <div class="card"><img src="f15.jpg" alt=""></div>
+          <div class="card"><img src="f16.jpg" alt=""></div>
+          <div class="card"><img src="f17.jpg" alt=""></div>
+          <div class="card"><img src="f18.jpg" alt=""></div>
+          <div class="card"><img src="f19.jpg" alt=""></div>
+          <div class="card"><img src="f20.jpg" alt=""></div>
+          <div class="card"><img src="f21.jpg" alt=""></div>
+          <div class="card"><img src="f22.jpg" alt=""></div>
+          <div class="card"><img src="f23.jpg" alt=""></div>
+          <div class="card"><img src="f24.jpg" alt=""></div>
+          <div class="card"><img src="f25.jpg" alt=""></div>
+          <div class="card"><img src="f26.jpg" alt=""></div>
+          <div class="card"><img src="f27.jpg" alt=""></div>
+          <div class="card"><img src="f28.jpg" alt=""></div>
+          <div class="card"><img src="f29.jpg" alt=""></div>
+          <div class="card"><img src="f30.jpg" alt=""></div>
+          <div class="card"><img src="f31.jpg" alt=""></div>
+          <div class="card"><img src="f32.jpg" alt=""></div>
+          <div class="card"><img src="f33.jpg" alt=""></div>
+          <div class="card"><img src="f34.jpg" alt=""></div>
+          <div class="card"><img src="f35.jpg" alt=""></div>
+          <div class="card"><img src="f36.jpg" alt=""></div>
+          <div class="card"><img src="f37.jpg" alt=""></div>
+          <div class="card"><img src="f38.jpg" alt=""></div>
+      </div>
+      </div>
+      <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <span class="prev">&#10094;</span>
+    <span class="next">&#10095;</span>
+    <img id="lightbox-img" src="" alt="">
+</div>
+      <script>
+const hamburger = document.getElementById('hamburger');
+const menu = document.querySelector('.menu-b');
+
+let isScrollingFromLink = false;   // Flag untuk mencegah close saat klik link
+
+function closeMenu() {
+    hamburger.classList.remove('active');
+    menu.classList.remove('active');
+}
+
+// Toggle menu
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    menu.classList.toggle('active');
+});
+
+// Auto close saat scroll (tapi tidak jika dari klik link)
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+    if (menu.classList.contains('active') && !isScrollingFromLink) {
+        const currentScroll = window.scrollY;
+        
+        if (Math.abs(currentScroll - lastScroll) > 20) {
+            closeMenu();
+        }
+        lastScroll = currentScroll;
+    }
+});
+
+document.querySelectorAll('.menu-b a').forEach(link => {
+    link.addEventListener('click', () => {
+        isScrollingFromLink = true;
+        
+        setTimeout(() => {
+            closeMenu();
+            isScrollingFromLink = false;
+        }, 200);
+    });
+});
+
+
+</script>
+<script>
+// Tombol Navbar Smooth
+document.querySelectorAll('.btn-outline').forEach(btn => {
+
+    btn.addEventListener('click', function() {
+
+        document.querySelectorAll('.btn-outline').forEach(b => {
+            b.classList.remove('pressed');
+        });
+
+        this.classList.add('pressed');
+
+        setTimeout(() => {
+            this.classList.remove('pressed');
+        }, 1000);
+
+    });
+
+});
+</script>
+<script>
+// Lightbox Improved + Disable Scroll
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.close');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+let currentIndex = 0;
+let images = [];
+
+function initLightbox() {
+    images = Array.from(document.querySelectorAll('.container .card img'));
+    
+    images.forEach((img, index) => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => {
+            currentIndex = index;
+            showImage();
+        });
+    });
+}
+
+function showImage() {
+    lightbox.style.display = 'flex';
+    document.body.classList.add('lightbox-active');   // ← Tambahkan ini
+    
+    lightboxImg.style.opacity = '0';
+    setTimeout(() => {
+        lightboxImg.src = images[currentIndex].src;
+        lightboxImg.style.opacity = '1';
+    }, 50);
+}
+
+function hideLightbox() {
+    lightbox.style.display = 'none';
+    document.body.classList.remove('lightbox-active');   // ← Tambahkan ini
+}
+
+// Navigation functions
+function goToPrev() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+}
+
+function goToNext() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+}
+
+// Event Listeners
+closeBtn.addEventListener('click', hideLightbox);
+prevBtn.addEventListener('click', goToPrev);
+nextBtn.addEventListener('click', goToNext);
+
+// Swipe
+let touchStartX = 0;
+lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+}, false);
+
+lightbox.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 80) {
+        if (diff > 0) goToNext();
+        else goToPrev();
+    }
+}, false);
+
+// Klik area kiri/kanan (hitbox besar)
+lightbox.addEventListener('click', (e) => {
+    if (e.target === closeBtn) {
+        hideLightbox();
+        return;
+    }
+    
+    const rect = lightbox.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    
+    if (clickX < rect.width * 0.35) {
+        goToPrev();
+    } else if (clickX > rect.width * 0.65) {
+        goToNext();
+    }
+});
+
+// Keyboard
+document.addEventListener('keydown', (e) => {
+    if (lightbox.style.display === 'flex') {
+        if (e.key === 'Escape') hideLightbox();
+        if (e.key === 'ArrowLeft') goToPrev();
+        if (e.key === 'ArrowRight') goToNext();
+    }
+});
+
+// Inisialisasi
+window.addEventListener('load', initLightbox);
+</script>
+    </body>
+</html>
